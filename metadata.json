@@ -1,0 +1,6 @@
+{
+  "name": "Corvane Freight – Australian & Global Freight Solutions",
+  "description": "Established Australian freight forwarder providing air freight, ocean freight, customs clearance, road transport, project cargo, and 3PL warehousing across Melbourne, Sydney, and worldwide.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

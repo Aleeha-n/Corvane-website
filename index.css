@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/* Respect users who disable animations — scroll-jumps become instant */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Fixed navbar offset for anchor jumps (UX guideline: fixed nav must not obscure content) */
+html {
+  scroll-padding-top: 5.5rem;
+}
+
+/*
+ * Corvane Freight brand theme — light site
+ * White base, navy #243673 for text/brand, orange #FF6309 for CTAs.
+ */
+@theme {
+  /* Light surfaces — page base and cards */
+  --color-surface-base: #FFFFFF;   /* main page bg */
+  --color-surface-well: #F4F6FA;   /* form fields, subtle wells */
+  --color-surface-panel: #FFFFFF;  /* modal panels, elevated cards */
+  --color-surface-raised: #FFFFFF; /* cards on white */
+
+  /* Navy surfaces — alternate bands, CTA banner, footer */
+  --color-surface-navy: #243673;       /* brand navy band */
+  --color-surface-navy-deep: #1B2A5E;  /* footer bottom, deeper navy */
+
+  /* Accent orange — from live brand site */
+  --color-accent: #FF6309;             /* decorative: dots, labels, hover accents */
+  --color-accent-cta: #FA6000;         /* button bg (AA-compliant 3.2:1 with navy text) */
+  --color-accent-cta-hover: #E55400;   /* button hover */
+  --color-accent-soft: #FF8A42;        /* subtle hover on navy bg */
+
+  /* Brand ink scale */
+  --color-ink: #243673;          /* brand navy — headings, key text */
+  --color-ink-soft: #484C50;     /* brand body gray from live site */
+}
+
+@layer base {
+  :root {
+    --font-sans: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Poppins', 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Semantic surfaces */
+    --surface-base: #FFFFFF;
+    --surface-well: #F4F6FA;
+    --surface-panel: #FFFFFF;
+    --surface-raised: #FFFFFF;
+    --surface-navy: #243673;
+    --surface-navy-deep: #1B2A5E;
+
+    /* Brand tokens */
+    --accent: #FF6309;
+    --accent-cta: #FA6000;
+    --accent-cta-hover: #E55400;
+    --accent-soft: #FF8A42;
+    --ink: #243673;
+    --ink-soft: #484C50;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    /* 'only light' opts out of Android Chrome/WebView force-dark inversion */
+    color-scheme: only light;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    color: var(--ink-soft);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    color: var(--ink);
+  }
+}
+
+/* Display headings use Poppins */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Fluid Typography */
+.text-fluid-hero-headline {
+  font-size: clamp(2.1rem, 3.4vw + 1rem, 3.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .text-fluid-hero-headline {
+    line-height: 1.14;
+    letter-spacing: -0.02em;
+  }
+}
+
+.text-fluid-hero-eyebrow {
+  font-size: clamp(0.6875rem, 0.35vw + 0.58rem, 0.8125rem);
+  letter-spacing: 0.22em;
+}
+
+.text-fluid-hero-subtext {
+  font-size: clamp(0.9375rem, 0.55vw + 0.8rem, 1.1875rem);
+  line-height: 1.65;
+}
+
